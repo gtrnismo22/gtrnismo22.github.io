@@ -237,6 +237,7 @@ body {
   
   /*===== Colores =====*/
   --first-color: #1D2D44;
+  --first-color-alt: #90b5ed;
   --dark-color: #0D1321;
   --dark-color-transparent: #0D132170;
   --dark-color-alt: #191f27;
@@ -306,6 +307,7 @@ img {
   padding: 0 1.5rem;
   background-color: var(--dark-color-transparent);
   backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px); /* Add blur effect for Safari */
   z-index: var(--z-fixed);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -427,7 +429,7 @@ img {
 
 /*Active menu*/
 .active {
-  color: var(--first-color);
+  color: var(--first-color-alt);
 }
 
 /*===== MEDIA QUERIES =====*/
