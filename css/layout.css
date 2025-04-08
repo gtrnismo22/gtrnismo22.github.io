@@ -1,6 +1,7 @@
 :root {
   color-scheme: dark;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -93,33 +94,75 @@ body {
 }
 
 .projects-container {
-  display: flex;
-  gap: 34px 16px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Always 2 columns */
+  gap: 16px;
+  /* Space between cards */
 }
 
-    /* Project Cards */
+@media screen and (max-width: 800px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+  }
+}
 
-    .project-card {
-      max-width: calc((100% - 32px) / 2);
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
 
-    .project-card-text-container {
-      flex-direction: column;
-      display: flex;
-      gap: 16px
-    }
+/* Project Cards */
 
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 10px;
-    }
+  .project-card {
+    position: relative;
+    display: block;
+    text-decoration: none;/* Remove underline from links */
+    overflow: hidden;
+    border-radius: 15px; /* Optional: Rounded corners */
+  }
+
+  .project-card-text-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    gap: 16px
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    /* Ensure the image fills the card */
+    object-fit: cover;
+    /* Crop the image to fit the card */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    /* Add hover effects */
+  }
+
+  .project-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: var(--white-color);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); /* Add blur effect for Safari */
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+    filter: brightness(80%);
+    /* Dim the image slightly */
+  }
+
+  .project-card:hover .project-title-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    /* Darken the overlay on hover */
+  }
 
 
 
@@ -149,35 +192,35 @@ body {
   gap: 34px;
 }
 
-    /* Project Gallery */
+/* Project Gallery */
 
-    #project-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+#project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    .project-gallery-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px 16px;
-    }
+.project-gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px 16px;
+}
 
-    .gallery-image-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.gallery-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .gallery-image-container.half-width {
-      width: calc((100% - 16px) / 2);
-    }
+.gallery-image-container.half-width {
+  width: calc((100% - 16px) / 2);
+}
 
-    .gallery-image {
-      width: 100%;
-      height: auto;
-    }
+.gallery-image {
+  width: 100%;
+  height: auto;
+}
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 3000px) {
@@ -187,16 +230,16 @@ body {
 }
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 2250px) {
   #main-content {
-    margin: 100px 500px;
+    margin: 100px 400px;
   }
 }
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 1600px) {
   #main-content {
-    margin: 100px 275px;
+    margin: 100px 175px;
   }
 }
 
@@ -223,10 +266,6 @@ body {
   #portfolio-header {
     flex-direction: column;
   }
-
-  .project-card {
-    max-width: calc((100% - 16px) / 2);
-  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and below) */
@@ -245,9 +284,9 @@ body {
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
-  
+
   /*===== Colores =====*/
-  
+
   --dark-color-transparent: #0A090870;
   --first-color: #590F1C;
   --first-color-alt: #6D676E;
@@ -273,9 +312,11 @@ body {
 }
 
 /*===== BASE =====*/
-*, ::before, ::after {
+*,
+::before,
+::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -305,7 +346,7 @@ img {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
+  grid-template-columns: 100%;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -320,17 +361,18 @@ img {
   padding: 0 1.5rem;
   background-color: var(--dark-color-transparent);
   backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px); /* Add blur effect for Safari */
+  -webkit-backdrop-filter: blur(25px);
+  /* Add blur effect for Safari */
   z-index: var(--z-fixed);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .header__logo {
@@ -363,8 +405,8 @@ img {
 .nav__content {
   height: 100%;
   -ms-grid-rows: max-content 1fr max-content;
-      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
-      grid-template-rows: max-content 1fr max-content;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
   row-gap: 2rem;
 }
 
@@ -383,8 +425,8 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-top: .25rem;
   margin-bottom: .8rem;
   width: 56px;
@@ -409,8 +451,8 @@ img {
 
 .nav__menu {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .nav__item {
@@ -450,65 +492,80 @@ img {
   body {
     margin: 0;
   }
+
   .header {
     height: calc(var(--header-height) + 1rem);
   }
-  .header__logo, .header__toggle {
+
+  .header__logo,
+  .header__toggle {
     display: none;
   }
+
   .nav {
     width: 100%;
   }
+
   .nav__content {
     -ms-grid-columns: (max-content)[];
-        grid-template-columns: repeat(3, -webkit-max-content);
-        grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(3, -webkit-max-content);
+    grid-template-columns: repeat(3, max-content);
     -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
     -webkit-column-gap: 1rem;
-            column-gap: 1rem;
+    column-gap: 1rem;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
-  .nav__close, .nav__profesion {
+
+  .nav__close,
+  .nav__profesion {
     display: none;
   }
+
   .nav__perfil {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .nav__img {
     width: 32px;
     height: 32px;
     margin-right: .5rem;
     margin-bottom: 0;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .nav__img img {
     width: 26px;
   }
+
   .nav__list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
+
   .nav__item {
     margin: 0 .25rem;
   }
+
   .nav__link {
     padding: .5rem .8rem;
     border-radius: .25rem;
   }
+
   .nav__link:hover {
     background-color: var(--first-color);
   }
+
   .active {
     background-color: var(--first-color);
     color: var(--white-color);
@@ -542,8 +599,9 @@ body::-webkit-scrollbar-thumb {
 
 /* set button(top and bottom of the scrollbar) */
 body::-webkit-scrollbar-button {
-  display:none;
+  display: none;
 }
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #252525;

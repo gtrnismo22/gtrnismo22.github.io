@@ -88,7 +88,7 @@ a.button:hover {
 #footer {
   width: 100%;
   display: flex;
-  padding: 30px 50px;
+  padding: 0px 50px;
   justify-content: center;
   align-items: center;
   gap: 16px;
