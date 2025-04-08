@@ -132,7 +132,7 @@ body {
     /* Ensure the image fills the card */
     object-fit: cover;
     /* Crop the image to fit the card */
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.25s ease, filter 0.25s ease;
     /* Add hover effects */
   }
 
@@ -147,7 +147,7 @@ body {
     padding: 10px;
     font-size: 1.2rem;
     font-weight: bold;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: background-color 0.25s ease; /* Smooth hover effect */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px); /* Add blur effect for Safari */
   }
@@ -397,8 +397,8 @@ img {
     height: 100vh;
     padding: 1.5rem 0;
     z-index: var(--z-fixed);
-    -webkit-transition: .5s;
-    transition: .5s;
+    -webkit-transition: .25s;
+    transition: .25s;
   }
 }
 

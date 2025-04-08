@@ -24,8 +24,19 @@ body.lb-disable-scrolling {
   outline: none;
 }
 
-#lightboxOverlay { position: fixed !important; top: 0; left: 0; height: 100% !important; width: 100% !important; }
-#lightbox { position: fixed !important; top: 50% !important; transform: translateY(-50%); }
+#lightboxOverlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+#lightbox {
+  position: fixed !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
 
 .lightbox .lb-image {
   display: block;
@@ -35,7 +46,13 @@ body.lb-disable-scrolling {
   border-radius: 11px;
 
   /* Image border */
-  border: 4px solid black;
+  border: 32px solid rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 700px) {
+  .lightbox .lb-image {
+    border: 16px solid rgb(255, 255, 255);
+  }
 }
 
 .lightbox a img {
@@ -84,6 +101,7 @@ body.lb-disable-scrolling {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
@@ -98,7 +116,7 @@ body.lb-disable-scrolling {
   z-index: 10;
 }
 
-.lb-container > .nav {
+.lb-container>.nav {
   left: 0;
 }
 
@@ -107,7 +125,8 @@ body.lb-disable-scrolling {
   background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
 }
 
-.lb-prev, .lb-next {
+.lb-prev,
+.lb-next {
   height: 100%;
   cursor: pointer;
   display: block;
@@ -122,10 +141,10 @@ body.lb-disable-scrolling {
   filter: invert(99%) sepia(1%) saturate(277%) hue-rotate(181deg) brightness(94%) contrast(94%);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: opacity 0.6s;
-  -moz-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
 }
 
 .lb-nav a.lb-prev:hover {
@@ -142,10 +161,10 @@ body.lb-disable-scrolling {
   filter: invert(99%) sepia(1%) saturate(277%) hue-rotate(181deg) brightness(94%) contrast(94%);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: opacity 0.6s;
-  -moz-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
 }
 
 .lb-nav a.lb-next:hover {
@@ -209,10 +228,10 @@ body.lb-disable-scrolling {
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
 }
 
 .lb-data .lb-close:hover {
