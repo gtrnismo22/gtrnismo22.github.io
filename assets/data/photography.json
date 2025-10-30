@@ -1,62 +1,107 @@
 [
     {
+        "id": 1,
         "src": "./assets/images/photography/image1.jpg",
-        "caption": "Caption for Image 1"
+        "caption": "Deer in the Wild 1",
+        "location": "Olympic National Park, WA",
+        "date": "July 2022"
     },
     {
+        "id": 2,
         "src": "./assets/images/photography/image2.jpg",
-        "caption": "Caption for Image 2"
+        "caption": "Deer in the Wild 2",
+        "location": "Olympic National Park, WA",
+        "date": "July 2022"
     },
     {
+        "id": 5,
         "src": "./assets/images/photography/image3.jpg",
-        "caption": "Caption for Image 3"
+        "caption": "A road in the forest",
+        "location": "Olympic National Park, WA",
+        "date": "August 2022"
     },
     {
+        "id": 3,
         "src": "./assets/images/photography/image4.jpg",
-        "caption": "Caption for Image 4"
+        "caption": "Overlook of a valley",
+        "location": "Olympic National Park, WA",
+        "date": "July 2022"
     },
     {
+        "id": 4,
         "src": "./assets/images/photography/image5.jpg",
-        "caption": "Caption for Image 4"
+        "caption": "Between the Trees",
+        "location": "Olympic National Park, WA",
+        "date": "July 2022"
     },
     {
+        "id": 6,
         "src": "./assets/images/photography/image6.jpg",
-        "caption": "Caption for Image 1"
+        "caption": "A yellow flower close-up",
+        "location": "Olympic National Park, WA",
+        "date": "August 2022"
     },
     {
+        "id": 7,
         "src": "./assets/images/photography/image7.jpg",
-        "caption": "Caption for Image 2"
+        "caption": "A train passing through the forest",
+        "location": "Olympic National Park, WA",
+        "date": "August 2022"
     },
     {
+        "id": 8,
         "src": "./assets/images/photography/image8.jpg",
-        "caption": "Caption for Image 3"
+        "caption": "Blossoms in Spring 1",
+        "location": "My House",
+        "date": "February 2024"
     },
     {
+        "id": 11,
         "src": "./assets/images/photography/image9.jpg",
-        "caption": "Caption for Image 4"
+        "caption": "Yosemite Falls",
+        "location": "Yosemite National Park, CA",
+        "date": "May 2024"
     },
     {
+        "id": 9,
         "src": "./assets/images/photography/image10.jpg",
-        "caption": "Caption for Image 4"
+        "caption": "Ostrich at Ostrichland USA",
+        "location": "Solvang, CA",
+        "date": "April 2024"
     },
     {
+        "id": 10,
         "src": "./assets/images/photography/image11.jpg",
-        "caption": "Caption for Image 1"
+        "caption": "Malai at Sunset",
+        "location": "Cambria",
+        "date": "April 2024"
     },
     {
+        "id": 12,
         "src": "./assets/images/photography/image12.jpg",
-        "caption": "Caption for Image 2"
+        "caption": "A wide view of the Badlands",
+        "location": "Badlands National Park",
+        "date": "June 2024"
     },
     {
+        "id": 13,
         "src": "./assets/images/photography/image13.jpg",
-        "caption": "Caption for Image 3"
+        "caption": "Blossoms in Spring 2",
+        "location": "My House",
+        "date": "February 2025"
     },
     {
+        "id": 14,
         "src": "./assets/images/photography/image14.jpg",
-        "caption": "Caption for Image 4"
+        "caption": "Malai",
+        "location": "My House",
+        "date": "February 2025"
     },
     {
+        "id": 15,
         "src": "./assets/images/photography/image15.jpg",
-        "caption": "Caption for Image 4"
+        "caption": "Malai",
+        "location": "My House",
+        "date": "February 2025"
     }
 ]
